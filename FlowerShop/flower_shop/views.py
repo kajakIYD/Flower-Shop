@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import PortfolioElement, ServicesElement
 
 # Create your views here.
 
@@ -24,8 +24,17 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def portfolio(request):
+    portfolio_elements = PortfolioElement.objects.all()
+    context = {'text': "Welcome my guest! :D", 'title': "Portfolio",
+               'portfolio_elements': portfolio_elements}
+    return render(request, 'portfolio.html', context)
+
+
 def services(request):
-    context = {'text': "Welcome my guest! :D", 'title': "Services"}
+    services_elements = ServicesElement.objects.order_by('-order_on_website')
+    context = {'text': "Welcome my guest! :D", 'title': "Services",
+               'services_elements': services_elements}
     return render(request, 'services.html', context)
 
 

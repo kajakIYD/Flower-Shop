@@ -1,7 +1,25 @@
 {% extends "base.html" %}
 
+
+{% block upper_image %}
+        <div style="margin-left: 30%;">
+            <img  src="https://via.placeholder.com/850x100.png?text=Some+other+Image">
+        </div>
+{% endblock %}
+
+{% block image %}
+    <img src="{{ IMAGE_URL }}homepage_image.png" alt="contact image"/>
+{% endblock %}
+
 {% block content %}
     <p>
         {{ text }}
     </p>
+    <p>
+        A little about Us
+        Alistair Floral Design
+        Alistair is a weddings and events floral design and décor company. Its run by Alistair, a freelance florist with extensive experience in wedding and event floristry alongside with a small team of experienced florist and creative minds! We specialize in floral arrangements, lights and much more. We can also help you with all your wedding/events needs, if we don’t supply it, we would recommend someone who does! Over the years we’ve established good relationships with the best suppliers within the industry.
+        We give our undivided attention to each and every client. We offer a free consultation, where we get together with our clients – presenting our ideas and options and create a wedding theme or event’s theme for that matter.  We believe every client is different; hence we give our utmost to ensure our clients are being satisfied from day one with our services.
+    </p>
 {% endblock %}
+

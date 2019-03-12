@@ -1,7 +1,37 @@
 {% extends "base.html" %}
 
+{% block upper_image %}
+        <div style="margin-left: 30%;">
+            <img  src="https://via.placeholder.com/850x100.png?text=Some+other+Image">
+        </div>
+{% endblock %}
+
+{% block image %}
+<img src="{{ IMAGE_URL }}homepage_image.png" alt="services image"/>
+{% endblock %}
+
 {% block content %}
     <p>
         {{ text }}
     </p>
+
+    {% for element in services_elements %}
+            {% if element.order_on_website|divisibleby:"2" %}
+                <div style="margin-left:100px;">
+                   {{ element.title }}
+                    <br>
+                   {{ element.description }}
+                   <img style="width: 10%; height: 10%" src="{{ element.image }}">
+                    <br><br>>
+                </div>
+            {% else %}
+                <div style="margin-left: 300px;">
+                   {{ element.title }}
+                    <br>
+                   {{ element.description }}
+                   <img style="width: 10%; height: 10%" src="{{ element.image }}">
+                    <br><br>>
+                </div>
+            {% endif %}
+    {% endfor %}
 {% endblock %}

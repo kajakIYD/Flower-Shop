@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block upper_image %}
+        <div style="margin-left: 30%;">
+            <img  src="https://via.placeholder.com/850x100.png?text=Some+other+Image">
+        </div>
+{% endblock %}
+
+{% block image %}
+    <img src="{{ IMAGE_URL }}homepage_image.png" alt="contact image"/>
+{% endblock %}
+
 {% block content %}
     <p>
         {{ text }}

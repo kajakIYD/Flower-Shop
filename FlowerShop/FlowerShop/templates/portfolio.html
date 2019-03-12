@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block upper_image %}
+        <div style="margin-left: 30%;">
+            <img  src="https://via.placeholder.com/850x100.png?text=Some+other+Image">
+        </div>
+{% endblock %}
+
+{% block image %}
+    <img src="{{ IMAGE_URL }}homepage_image.png" alt="contact image"/>
+{% endblock %}
+
+{% block content %}
+    <p>
+        {{ text }}
+    </p>
+
+    <div class="container">
+    {% for element in portfolio_elements %}
+            {{ element.title }}
+            {{ element.description }}
+    {% endfor %}
+    </div>
+
+ <div style="width:100%">
+  {% for element in portfolio_elements %}
+      <div style="float:left; width:200px; height:200px;">
+          <img src="{{ element.image }}" alt="">
+      </div>
+  {% endfor%}
+  </div>
+
+
+{% endblock %}

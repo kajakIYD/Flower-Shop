@@ -16,19 +16,13 @@
     </p>
 
     <div class="container">
-    {% for element in portfolio_elements %}
-            {{ element.title }}
-            {{ element.description }}
-    {% endfor %}
+        <div class="row">
+          {% for element in portfolio_elements %}
+          <div class="col-md-4">
+              <img src="{{ element.image }}" class="img-responsive img-thumbnail"/>
+           </div>
+        {% endfor %}
+        </div>
     </div>
-
- <div style="width:100%">
-  {% for element in portfolio_elements %}
-      <div style="float:left; width:200px; height:200px;">
-          <img src="{{ element.image }}" alt="">
-      </div>
-  {% endfor%}
-  </div>
-
 
 {% endblock %}

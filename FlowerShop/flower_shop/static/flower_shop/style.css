@@ -32,15 +32,6 @@ li a:hover {
   width:100%; height:100%;
 }
 
-.container {
-    display:block;
-}
-
-.container-element{
-    background-position: center bottom, center right;
-    background-repeat:no-repeat;
-}
-
 .frame{
     width:25%; height:25%;
     opacity: 0.8;
